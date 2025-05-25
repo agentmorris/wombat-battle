@@ -1,8 +1,8 @@
-# Wombat Battle 🦫 vs 🐺
+# Wombat Battle
 
 A fun, colorful 2D board game where clever wombats battle cunning jackals! Wombats use their special digging ability to create holes and evade the stronger jackals in this strategic turn-based game.
 
-![Wombat Battle Screenshot](screenshot.jpg)
+![Wombat Battle Screenshot](./screenshot.jpg)
 
 ## 🎮 Game Features
 
