@@ -4,6 +4,10 @@ A fun, colorful 2D board game where clever wombats battle cunning jackals! Womba
 
 ![Wombat Battle Screenshot](./screenshot.jpg)
 
+## Original prompt
+
+"Make me a 2D board game in which wombats do battle with jackals.  Wombats like to dig holes, so the mechanics of the game should involve wombats digging in some way.  Perhaps the game is mostly symmetric, but digging is  a special ability the wombats have that is offset by some other disadvantage, or perhaps the game is not symmetric at all, and the fundamental mechanic of the game is that the wombats have to dig holes to evade attack by the jackals.  Wombats and jackals should be represented by cartoon-ish sprites, with a fun, upbeat color palette.  The game should allow local play against an AI, or should be playable online; I should be able to start a new game, then give a URL and a game code to a friend to join the game.  I will ask your help to deploy the game on a Linux server.  Game sessions do not need to persist beyond the lifetime of the process we’ll use to run the game."
+
 ## 🎮 Game Features
 
 - **Strategic Gameplay**: Turn-based combat with unique mechanics for each side
