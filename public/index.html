@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wombat Battle</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Wombat Battle</h1>
+            <p>Wombats vs Jackals - Dig to survive!</p>
+        </header>
+
+        <div id="menu" class="screen">
+            <div class="menu-options">
+                <button id="createGame" class="btn btn-primary">Create Game</button>
+                <button id="joinGame" class="btn btn-secondary">Join Game</button>
+                <button id="playAI" class="btn btn-tertiary">Play vs AI</button>
+            </div>
+            
+            <div id="joinForm" class="hidden">
+                <input type="text" id="gameCodeInput" placeholder="Enter game code" maxlength="6">
+                <button id="joinGameBtn" class="btn btn-primary">Join</button>
+                <button id="cancelJoin" class="btn btn-secondary">Cancel</button>
+            </div>
+        </div>
+
+        <div id="lobby" class="screen hidden">
+            <h2>Game Lobby</h2>
+            <p>Game Code: <span id="displayGameCode"></span></p>
+            <p>Share this code with your friend!</p>
+            <div id="players"></div>
+            <button id="readyBtn" class="btn btn-primary hidden">Ready</button>
+            <button id="backToMenu" class="btn btn-secondary">Back to Menu</button>
+        </div>
+
+        <div id="game" class="screen hidden">
+            <div class="game-layout">
+                <div class="game-panel">
+                    <div class="game-info">
+                        <div class="player-info">
+                            <span id="playerSide"></span>
+                        </div>
+                        <div class="turn-info">
+                            <span id="currentTurn"></span>
+                        </div>
+                        <div class="actions">
+                            <button id="moveBtn" class="action-btn active">Move</button>
+                            <button id="digBtn" class="action-btn">Dig Hole</button>
+                        </div>
+                    </div>
+                    <canvas id="gameBoard" width="640" height="640"></canvas>
+                    <div id="gameStatus"></div>
+                </div>
+                
+                <div class="rules-sidebar">
+                    <h3>How to Play</h3>
+                    
+                    <div class="rule-section">
+                        <h4>🎯 Objective</h4>
+                        <p>Eliminate all enemy pieces to win!</p>
+                    </div>
+                    
+                    <div class="rule-section">
+                        <h4><img src="images/wombat.png" class="rule-icon" alt="Wombat"> Wombats</h4>
+                        <ul>
+                            <li>Start at the bottom of the board</li>
+                            <li>Can <strong>move</strong> to adjacent squares</li>
+                            <li>Can <strong>dig holes</strong> in empty adjacent squares</li>
+                            <li>Safe from falling into holes</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="rule-section">
+                        <h4><img src="images/jackal.png" class="rule-icon" alt="Jackal"> Jackals</h4>
+                        <ul>
+                            <li>Start at the top of the board</li>
+                            <li>Can <strong>move</strong> to adjacent squares</li>
+                            <li>Can <strong>capture</strong> enemy pieces</li>
+                            <li>Fall into holes and are eliminated!</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="rule-section">
+                        <h4>🎮 Controls</h4>
+                        <ul>
+                            <li>Click a piece to select it</li>
+                            <li>Click an adjacent square to move</li>
+                            <li>Use "Dig Hole" button for wombats</li>
+                            <li>Use "Move" button for normal movement</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="rule-section">
+                        <h4>💡 Strategy Tips</h4>
+                        <ul>
+                            <li>Wombats: Dig holes to trap jackals</li>
+                            <li>Jackals: Avoid holes, capture wombats</li>
+                            <li>Control the center of the board</li>
+                            <li>Plan your moves carefully!</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="gameOver" class="screen hidden">
+            <h2>Game Over!</h2>
+            <p id="winnerText"></p>
+            <button id="playAgain" class="btn btn-primary">Play Again</button>
+        </div>
+    </div>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="js/game.js"></script>
+    <script src="js/ai.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
